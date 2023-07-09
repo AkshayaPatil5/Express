@@ -8,9 +8,7 @@ const requestHandler = (req, res) => {
     fs.readFile('message.txt', { encoding: 'utf-8' }, (err, data) => {
       if (err) {
         console.log(err);
-        
-      } else {
-        
+        } else {
         res.write('<html>');
         res.write('<head><title>FirstApp</title></head>');
         res.write(`<body>${data}</body>`);
@@ -32,7 +30,7 @@ const requestHandler = (req, res) => {
 
       fs.writeFile('message.txt', message, (err) => {
         
-          res.statusCode = 302; // Redirect
+          res.statusCode = 302; 
           res.setHeader('Location', '/');
           res.end();
         })
